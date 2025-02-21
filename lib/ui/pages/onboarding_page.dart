@@ -11,7 +11,8 @@ class OnboardingPage extends StatefulWidget {
 
 class _OnboardingPageState extends State<OnboardingPage> {
   int curentIndex = 0;
-  final CarouselSliderController carouselController = CarouselSliderController();
+  final CarouselSliderController carouselController =
+      CarouselSliderController();
 
   List<String> titles = [
     'Grow Your\nFinancial Today',
@@ -65,8 +66,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
             ),
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 24),
-              padding: const EdgeInsets.symmetric(
-                  horizontal: 22, vertical: 24),
+              padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 24),
               decoration: BoxDecoration(
                 color: whiteColor,
                 borderRadius: BorderRadius.circular(20),
@@ -92,74 +92,125 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  const SizedBox(
-                    height: 50,
+                  SizedBox(
+                    height: curentIndex == 2 ? 38 : 50,
                   ),
-                  Row(
-                    children: [
-                      Container(
-                        height: 12,
-                        width: 12,
-                        margin: const EdgeInsets.only(right: 10),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: curentIndex == 0
-                              ? blackColor
-                              : LightBackgroundColor,
-                        ),
-                      ),
-                      Container(
-                        height: 12,
-                        width: 12,
-                        margin: const EdgeInsets.only(right: 10),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: curentIndex == 1
-                              ? blackColor
-                              : LightBackgroundColor,
-                        ),
-                      ),
-                      Container(
-                        height: 12,
-                        width: 12,
-                        margin: const EdgeInsets.only(right: 10),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: curentIndex == 2
-                              ? blackColor
-                              : LightBackgroundColor,
-                        ),
-                      ),
-                      const Spacer(),
-                      Container(
-                        width: 150,
-                        height: 50,
-                        child: TextButton(
-                          onPressed: () {
-                            // Gunakan animateToPage untuk berpindah halaman
-                            carouselController.animateToPage(
-                              curentIndex + 1,
-                              duration: const Duration(milliseconds: 300),
-                              curve: Curves.ease,
-                            );
-                          },
-                          style: TextButton.styleFrom(
-                            backgroundColor: purpleColor,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(56),
+                  curentIndex == 2
+                      ? Column(
+                          children: [
+                            SizedBox(
+                              width: double.infinity,
+                              height: 50,
+                              child: TextButton(
+                                onPressed: () {
+                                  // Gunakan animateToPage untuk berpindah halaman
+                                  carouselController.animateToPage(
+                                    curentIndex + 1,
+                                    duration: const Duration(milliseconds: 300),
+                                    curve: Curves.ease,
+                                  );
+                                },
+                                style: TextButton.styleFrom(
+                                  backgroundColor: purpleColor,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(56),
+                                  ),
+                                ),
+                                child: Text(
+                                  'Get Started',
+                                  style: whiteTextColor.copyWith(
+                                    fontSize: 16,
+                                    fontWeight: semibold,
+                                  ),
+                                ),
+                              ),
                             ),
-                          ),
-                          child: Text(
-                            'Continue',
-                            style: whiteTextColor.copyWith(
-                              fontSize: 16,
-                              fontWeight: semibold,
+                            const SizedBox(
+                              height: 20,
                             ),
-                          ),
-                        ),
-                      )
-                    ],
-                  )
+                            SizedBox(
+                              width: double.infinity,
+                              height: 24,
+                              child: TextButton(
+                                onPressed: () {},
+                                style: TextButton.styleFrom(
+                                  padding: EdgeInsets.zero,
+                                ),
+                                child: Text(
+                                  'Sign In',
+                                  style: greyTextStyle.copyWith(
+                                    fontSize: 16,
+                                  ),
+                                ),
+                              ),
+                            )
+                          ],
+                        )
+                      : Row(
+                          children: [
+                            Container(
+                              height: 12,
+                              width: 12,
+                              margin: const EdgeInsets.only(right: 10),
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: curentIndex == 0
+                                    ? blackColor
+                                    : LightBackgroundColor,
+                              ),
+                            ),
+                            Container(
+                              height: 12,
+                              width: 12,
+                              margin: const EdgeInsets.only(right: 10),
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: curentIndex == 1
+                                    ? blackColor
+                                    : LightBackgroundColor,
+                              ),
+                            ),
+                            Container(
+                              height: 12,
+                              width: 12,
+                              margin: const EdgeInsets.only(right: 10),
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: curentIndex == 2
+                                    ? blackColor
+                                    : LightBackgroundColor,
+                              ),
+                            ),
+                            const Spacer(),
+                            SizedBox(
+                              width: 150,
+                              height: 50,
+                              child: TextButton(
+                                onPressed: () {
+                                  // Gunakan animateToPage untuk berpindah halaman
+                                  carouselController.animateToPage(
+                                    curentIndex + 1,
+                                    duration: const Duration(milliseconds: 300),
+                                    curve: Curves.ease,
+                                  );
+                                },
+                                style: TextButton.styleFrom(
+                                  backgroundColor: purpleColor,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(56),
+                                  ),
+                                ),
+                                child: Text(
+                                  'Continue',
+                                  style: whiteTextColor.copyWith(
+                                    fontSize: 16,
+                                    fontWeight: semibold,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        )
                 ],
               ),
             ),
