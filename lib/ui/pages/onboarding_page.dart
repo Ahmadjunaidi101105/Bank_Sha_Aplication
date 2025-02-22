@@ -2,6 +2,7 @@ import 'package:bank_sha/shared/theme.dart';
 import 'package:bank_sha/ui/pages/sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:bank_sha/ui/widgets/buttons.dart';
 
 class OnboardingPage extends StatefulWidget {
   const OnboardingPage({super.key});
@@ -99,32 +100,9 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   curentIndex == 2
                       ? Column(
                           children: [
-                            SizedBox(
-                              width: double.infinity,
-                              height: 50,
-                              child: TextButton(
-                                onPressed: () {
-                                  // Gunakan animateToPage untuk berpindah halaman
-                                  carouselController.animateToPage(
-                                    curentIndex + 1,
-                                    duration: const Duration(milliseconds: 300),
-                                    curve: Curves.ease,
-                                  );
-                                },
-                                style: TextButton.styleFrom(
-                                  backgroundColor: purpleColor,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(56),
-                                  ),
-                                ),
-                                child: Text(
-                                  'Get Started',
-                                  style: whiteTextColor.copyWith(
-                                    fontSize: 16,
-                                    fontWeight: semibold,
-                                  ),
-                                ),
-                              ),
+                            CustomFilledButton(
+                              title: 'Get Stratted',
+                              onPressed: () {},
                             ),
                             const SizedBox(
                               height: 20,
@@ -151,7 +129,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                   ),
                                 ),
                               ),
-                            ),
+                            )
                           ],
                         )
                       : Row(

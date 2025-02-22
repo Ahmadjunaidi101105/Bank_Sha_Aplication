@@ -30,6 +30,7 @@ class SignInPage extends StatelessWidget {
             'Sign In &\n Grow Your FInance',
             style: blackTextStyle.copyWith(
               fontWeight: semibold,
+              fontSize: 20,
             ),
           ),
           const SizedBox(
