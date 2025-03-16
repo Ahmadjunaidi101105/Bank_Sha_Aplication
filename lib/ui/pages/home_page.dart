@@ -76,7 +76,7 @@ class HomePage extends StatelessWidget {
         padding: const EdgeInsetsDirectional.symmetric(
           horizontal: 24,
         ),
-        children: [buildProfile(), buildWalletCard()],
+        children: [buildProfile(), buildWalletCard(), buildLevel()],
       ),
     );
   }
@@ -195,6 +195,58 @@ class HomePage extends StatelessWidget {
             style: whiteTextStyle.copyWith(
               fontSize: 24,
               fontWeight: semibold,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget buildLevel() {
+    return Container(
+      margin: const EdgeInsets.only(
+        top: 40.0,
+      ),
+      padding: const EdgeInsets.all(22),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: whiteColor,
+      ),
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Text(
+                'Level 1',
+                style: blackTextStyle.copyWith(
+                  fontWeight: medium,
+                ),
+              ),
+              Spacer(),
+              Text(
+                '55%',
+                style: greenTextStyle.copyWith(
+                  fontWeight: semibold,
+                ),
+              ),
+              Text(
+                'Rp 42.000.000',
+                style: blackTextStyle.copyWith(
+                  fontWeight: semibold,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(55),
+            child: LinearProgressIndicator(
+              value: 0.55,
+              minHeight: 5,
+              valueColor: AlwaysStoppedAnimation(greenColor),
+              backgroundColor: LightBackgroundColor,
             ),
           ),
         ],
