@@ -30,7 +30,7 @@ class CustomFilledButton extends StatelessWidget {
         ),
         child: Text(
           title,
-          style: whiteTextColor.copyWith(
+          style: whiteTextStyle.copyWith(
             fontSize: 16,
             fontWeight: semibold,
           ),
