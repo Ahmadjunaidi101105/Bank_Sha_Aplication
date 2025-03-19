@@ -7,11 +7,11 @@ class CustomFormFilled extends StatelessWidget {
   final TextEditingController? controller;
 
   const CustomFormFilled({
-    Key? key,
+    super.key,
     required this.title,
     this.obscureText = false,
     this.controller,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

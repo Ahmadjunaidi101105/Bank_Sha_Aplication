@@ -6,10 +6,10 @@ class HomeUserItem extends StatelessWidget {
   final String username;
 
   const HomeUserItem({
-    Key? key,
+    super.key,
     required this.imageUrl,
     required this.username,
-  }) : super(key: key);
+  });
   @override
   Widget build(BuildContext context) {
     return Container(

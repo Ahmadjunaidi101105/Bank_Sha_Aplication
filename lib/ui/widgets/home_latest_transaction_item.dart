@@ -8,12 +8,12 @@ class HomeLatestTransactionItem extends StatelessWidget {
   final String value;
 
   const HomeLatestTransactionItem({
-    Key? key,
+    super.key,
     required this.iconUrl,
     required this.time,
     required this.title,
     required this.value,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
