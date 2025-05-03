@@ -3,15 +3,15 @@ import 'package:bank_sha/ui/widgets/buttons.dart';
 import 'package:bank_sha/ui/widgets/forms.dart';
 import 'package:flutter/material.dart';
 
-class ProfileEditPage extends StatelessWidget {
-  const ProfileEditPage({super.key});
+class ProfileEditPinPage extends StatelessWidget {
+  const ProfileEditPinPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Edit Profile',
+          'Edit Pin',
         ),
       ),
       body: ListView(
@@ -31,21 +31,14 @@ class ProfileEditPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const CustomFormFilled(title: 'Username'),
-                const SizedBox(
-                  height: 16,
+                const CustomFormFilled(
+                  title: 'Old PIN',
                 ),
-                const CustomFormFilled(title: 'Full Name'),
-                const SizedBox(
-                  height: 16,
-                ),
-                const CustomFormFilled(title: 'Email Addres'),
                 const SizedBox(
                   height: 16,
                 ),
                 const CustomFormFilled(
-                  title: 'Password',
-                  obscureText: true,
+                  title: ' New PIN',
                 ),
                 const SizedBox(
                   height: 30,
