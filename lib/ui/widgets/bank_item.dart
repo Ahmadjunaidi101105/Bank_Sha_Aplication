@@ -33,7 +33,7 @@ class BankItem extends StatelessWidget {
         children: [
           Image.asset(
             imageUrl,
-            width: 40,
+            width: 60,
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
