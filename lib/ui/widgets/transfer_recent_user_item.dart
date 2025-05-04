@@ -17,6 +17,7 @@ class TransferRecentUserItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Container(
       margin: const EdgeInsets.only(
         bottom: 18,
@@ -89,4 +90,7 @@ class TransferRecentUserItem extends StatelessWidget {
       ),
     );
   }
+
+  
 }
+ 
