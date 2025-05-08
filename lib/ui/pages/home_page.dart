@@ -490,9 +490,85 @@ class MoreDialog extends StatelessWidget {
       content: Container(
         height: 326,
         width: MediaQuery.of(context).size.width,
+        padding: const EdgeInsets.all(30),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(40),
           color: LightBackgroundColor,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Do More with Us',
+              style: blackTextStyle.copyWith(
+                fontSize: 16,
+                fontWeight: semibold,
+              ),
+            ),
+            const SizedBox(
+              height: 14,
+            ),
+            Wrap(
+              spacing: 29,
+              runSpacing: 25,
+              children: [
+                HomeServiceItem(
+                  iconUrl: 'assets/ic_product_data.png',
+                  title: 'data',
+                  onTap: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) => const MoreDialog());
+                  },
+                ),
+                HomeServiceItem(
+                  iconUrl: 'assets/ic_product_water.png',
+                  title: 'water',
+                  onTap: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) => const MoreDialog());
+                  },
+                ),
+                HomeServiceItem(
+                  iconUrl: 'assets/ic_product_stream.png',
+                  title: 'Stream',
+                  onTap: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) => const MoreDialog());
+                  },
+                ),
+                HomeServiceItem(
+                  iconUrl: 'assets/ic_product_movie.png',
+                  title: 'Movie',
+                  onTap: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) => const MoreDialog());
+                  },
+                ),
+                HomeServiceItem(
+                  iconUrl: 'assets/ic_product_food.png',
+                  title: 'Food',
+                  onTap: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) => const MoreDialog());
+                  },
+                ),
+                HomeServiceItem(
+                  iconUrl: 'assets/ic_product_travel.png',
+                  title: 'Travel',
+                  onTap: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) => const MoreDialog());
+                  },
+                ),
+              ],
+            )
+          ],
         ),
       ),
     );
