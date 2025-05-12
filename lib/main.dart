@@ -70,8 +70,6 @@ class MyApp extends StatelessWidget {
         '/data-package': (context) => const DataPakacgePage(),
         '/data-success': (context) => const DataSuccesPage(),
       },
-  
     );
   }
 }
- 
