@@ -1,10 +1,14 @@
+import 'dart:io';
+
 import 'package:bank_sha/models/sign_up_form_model.dart';
+import 'package:bank_sha/shared/shared_methods.dart';
 import 'package:bank_sha/shared/theme.dart';
 import 'package:bank_sha/ui/widgets/buttons.dart';
 import 'package:bank_sha/ui/widgets/forms.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
-class SignUpSetProfilePage extends StatelessWidget {
+class SignUpSetProfilePage extends StatefulWidget {
   final SignUpFormModel data;
 
   const SignUpSetProfilePage({
@@ -13,6 +17,14 @@ class SignUpSetProfilePage extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  State<SignUpSetProfilePage> createState() => _SignUpSetProfilePageState();
+}
+
+class _SignUpSetProfilePageState extends State<SignUpSetProfilePage> {
+  @override
+  final pinController = TextEditingController(text: '');
+  XFile? selectedImage;
+
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
@@ -51,29 +63,33 @@ class SignUpSetProfilePage extends StatelessWidget {
             ),
             child: Column(
               children: [
-                // Note Name INput
-                // Container(
-                //   width: 120,
-                //   height: 120,
-                //   decoration: BoxDecoration(
-                //     shape: BoxShape.circle,
-                //     color: LightBackgroundColor,
-                //   ),
-                //   child: Center(
-                //     child: Image.asset('assets/ic_upload.png'),
-                //   ),
-                // ),
-                Container(
-                  width: 120,
-                  height: 120,
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: AssetImage(
-                        'assets/img_profile.png',
-                      ),
+                GestureDetector(
+                  onTap: () async {
+                    final image = await selectImage();
+                    setState(() {
+                      selectedImage = image;
+                    });
+                  },
+                  child: Container(
+                    width: 120,
+                    height: 120,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: LightBackgroundColor,
+                      image: selectedImage == null
+                          ? null
+                          : DecorationImage(
+                              fit: BoxFit.cover,
+                              image: FileImage(
+                                File(selectedImage!.path),
+                              ),
+                            ),
                     ),
+                    child: selectedImage != null
+                        ? null
+                        : Center(
+                            child: Image.asset('assets/ic_upload.png'),
+                          ),
                   ),
                 ),
                 const SizedBox(
@@ -92,6 +108,7 @@ class SignUpSetProfilePage extends StatelessWidget {
                 CustomFormFilled(
                   title: 'Set PIN (6 digit number)',
                   obscureText: true,
+                  controller: pinController,
                 ),
                 const SizedBox(
                   height: 30,
