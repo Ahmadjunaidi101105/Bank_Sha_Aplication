@@ -25,6 +25,7 @@ import 'package:bank_sha/ui/pages/profile_edit_page.dart';
 import 'package:bank_sha/ui/pages/topup_page.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {

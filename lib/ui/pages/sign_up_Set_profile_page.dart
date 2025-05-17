@@ -145,7 +145,7 @@ class _SignUpSetProfilePageState extends State<SignUpSetProfilePage> {
                         ),
                       );
                     } else {
-                      showCustomSnackBar(context, 'PIN Harus ^ Digit');
+                      showCustomSnackBar(context, 'PIN Harus 6 Digit');
                     }
                   },
                 ),
